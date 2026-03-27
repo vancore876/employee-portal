@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
-import SignOutButton from "@/components/SignOutButton";
+import SignOutButton from "@/components/signout-button";
 
 export const metadata: Metadata = {
   title: "Employee Portal",
