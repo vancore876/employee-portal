@@ -1,8 +1,22 @@
-export function SignOutButton() {
+"use client";
+
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
+
+export default function SignOutButton() {
+  const router = useRouter();
+
+  const handleSignOut = async () => {
+    const supabase = createClient();
+    await supabase.auth.signOut();
+    router.push("/login");
+    router.refresh();
+  };
+
   return (
     <button
-      type="submit"
-      className="rounded-2xl bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 px-5 py-3 font-semibold text-white shadow-lg transition hover:scale-105 hover:opacity-90"
+      onClick={handleSignOut}
+      className="rounded-xl bg-gradient-to-r from-purple-600 via-blue-500 to-red-500 px-5 py-2 text-lg font-medium text-white shadow-md transition hover:scale-105"
     >
       Sign Out
     </button>

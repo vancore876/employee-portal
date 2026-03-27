@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Image from "next/image";
+import SignOutButton from "@/components/SignOutButton";
 
 export const metadata: Metadata = {
   title: "Employee Portal",
@@ -19,7 +20,7 @@ export default function RootLayout({
           <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
             <div className="flex items-center">
               <Image
-                src="/Logo.jpg"
+                src="/logo.jpg"
                 alt="Lapparan logo"
                 width={220}
                 height={70}
@@ -28,9 +29,7 @@ export default function RootLayout({
               />
             </div>
 
-            <button className="rounded-xl bg-gradient-to-r from-purple-600 via-blue-500 to-red-500 px-5 py-2 text-lg font-medium text-white shadow-md transition hover:scale-105">
-              Sign Out
-            </button>
+            <SignOutButton />
           </div>
         </header>
 
